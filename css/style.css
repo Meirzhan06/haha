@@ -175,3 +175,79 @@ html,body{
         color: #000;
     }
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(0, 0, 0);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+}
+.preloader{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000000;
+    background-color: #ffffff;
+}
+
+.preloader_content{
+    width: 100px;
+    height: 102px;
+    border-radius: 100%;
+    position: absolute;
+    top: 45%;
+    left: calc(50% - 50px);
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 5px solid rgba(30, 30, 30, 0.7);
+    border-right: none;
+    border-top: none;
+    background-clip: padding;
+    box-shadow: inset 0px 0px 10px rgba(47, 47, 47, 0.15); }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg); }
+    to {
+        transform: rotate(360deg); } 
+}
+
+.circle:nth-of-type(0) {
+    transform: rotate(0deg);
+}
+.circle:nth-of-type(0) .inner {
+    animation: spin 2s infinite linear;
+}
+.circle:nth-of-type(1) {
+    transform: rotate(70deg);
+}
+.circle:nth-of-type(1) .inner {
+    animation: spin 2s infinite linear;
+}
+.circle:nth-of-type(2) {
+    transform: rotate(140deg);
+}
+.circle:nth-of-type(2) .inner {
+    animation: spin 2s infinite linear;
+}
+
+.preloader_content {
+    animation: spin 5s infinite linear;
+} /*https://codepen.io/Mattykins/pen/JjeyrB*/
